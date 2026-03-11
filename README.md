@@ -1,16 +1,30 @@
-# React + Vite
+# Ne Dendy? Veri Analiz Paneli
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, anket yanıtlarının analiz edilerek anlamlı içgörülere dönüştürüldüğü "Ne Dendy?" modülünün React tabanlı bir prototipidir.
 
-Currently, two official plugins are available:
+## Nasıl Çalıştırılır?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Projeyi klonlayın: `git clone [repo_linki]`
+2. Klasöre girin: `cd ne-dendy-case`
+3. Bağımlılıkları yükleyin: `npm install`
+4. Uygulamayı başlatın: `npm run dev`
+5. Tarayıcınızda http://localhost:5173/ adresine giderek paneli görüntüleyin.
 
-## React Compiler
+## Teknik Tercihler ve Nedenleri
+* **Vite & React:** Hızlı kurulum, geliştirme hızı ve yüksek performans için kullanıldı. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **PapaParse:** Tarayıcı tarafında CSV dosyalarını sorunsuz ve hızlı bir şekilde okuyabilmek için kullanıldı.
 
-## Expanding the ESLint configuration
+* **Tailwind CSS:** Modern ve temiz arayüzü  hızlı şekilde inşa edebilmek için kullanıldı.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Recharts:** Verilerin sadece okunması değil, bir bakışta anlaşılması gerektiği için grafiksel sunum amacıyla kullanıldı.
+
+* **Component Bazlı Mimari:** Uygulama tek bir monolitik dosyadan kurtarılarak DashboardHeader, MetricCards ve ChartsSection gibi tekrar kullanılabilir bileşenlere bölünmüştür. Bu sayede kodun okunabilirliği ve bakımı kolaylaştırılmıştır.
+
+
+## Geliştirme Önerileri
+* **Büyük Veri Yönetimi:** Veri seti çok büyüdüğünde tarayıcıyı yormamak adına tablo/veri sayfalama yapısı eklenebilir.
+
+* **Dinamik Renk Algoritması:** Temalar veya modeller dinamik olarak değiştiğinde renklerin çakışmaması için daha gelişmiş bir dinamik renk atama algoritması yazılabilir.
+
+* **Test Altyapısı:** Veri filtreleme ve hesaplama mantıklarının doğruluğunu garanti altına almak için Jest/React Testing Library ile birim (unit) testleri yazılabilir.
